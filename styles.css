@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1110px;
+  margin: auto;
+  margin-top: 89px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 55px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+nav a {
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #5e607a;
+}
+
+nav button {
+  display: none;
+}
+
+.menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+main {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 71px;
+}
+
+main img {
+  width: 100%;
+  height: 300px;
+  grid-column: span 2;
+  object-fit: cover;
+}
+
+main section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+main h1 {
+  color: #00001a;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 56px;
+}
+
+article p {
+  color: #5e607a;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 29px;
+}
+
+article button {
+  background-color: #f15d51;
+  color: #fffdfa;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  padding: 15px 33px;
+  letter-spacing: 4.38px;
+  cursor: pointer;
+}
+
+aside {
+  min-width: 350px;
+  background: #00001a;
+  padding: 32px 24px;
+  padding-bottom: 0;
+  height: fit-content;
+}
+
+aside h3 {
+  color: #e9aa52;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+aside h4 {
+  color: #fffdfa;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+aside p {
+  color: #c5c6ce;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+aside div {
+  /* trbl */
+  padding: 31px 0 29px 0;
+  border-bottom: 1px solid #5e607a;
+}
+
+aside div:last-child {
+  border: none;
+}
+
+aside a {
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  text-decoration: none;
+}
+
+.card img {
+  height: 127px;
+  width: 100px;
+}
+
+.card h3 {
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #c5c6ce;
+}
+
+.card .title {
+  font-weight: 800;
+  font-size: 18px;
+  color: #00001a;
+  margin-bottom: 9px;
+}
+
+.card .desc {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  color: #5e607a;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-gap: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1172px) {
+  .container {
+    max-width: 96%;
+  }
+}
+
+@media (max-width: 1042px) {
+  main h1 {
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 933px) {
+  main {
+    display: block;
+    margin-bottom: 64px;
+  }
+
+  main h1 {
+    line-height: 56px;
+  }
+
+  main section {
+    margin-bottom: 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fffdfa;
+    height: 100vh;
+    width: 256px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 144px;
+    padding-left: 24px;
+    transform: translateX(256px);
+    transition: 0.2s ease-in transform;
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    display: block;
+    position: absolute;
+    top: 27px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #00001a;
+    opacity: 0.5;
+    display: none;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  main section {
+    display: block;
+  }
+
+  main img {
+    margin-bottom: 24px;
+  }
+
+  main h1 {
+    margin-bottom: 16px;
+    line-height: 50px;
+  }
+
+  main aside {
+    min-width: 100%;
+  }
+
+  .bottom {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+
+  .container {
+    margin-top: 40px;
+  }
+}
